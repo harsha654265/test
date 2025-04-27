@@ -20,20 +20,36 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
-    h1 {
-      margin-bottom: 10px;
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0088cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
-    p {
-      margin-bottom: 20px;
+    button:hover {
+      background-color: #007bb5;
     }
   </style>
 </head>
 <body>
   <h1>24/7 Live Stream</h1>
-  <p>Enjoy continuous streaming without interruption!</p>
+  <p>Enjoy continuous streaming in high quality!</p>
   <iframe 
-    src="https://www.youtube.com/embed/wciz18maOjc?autoplay=1&mute=1&loop=1&playlist=wciz18maOjc" 
+    id="liveStream" 
+    src="https://www.youtube.com/embed/wciz18maOjc?autoplay=1&mute=1&loop=1&playlist=wciz18maOjc&vq=hd1440" 
     allowfullscreen>
   </iframe>
+  <br>
+  <button onclick="unmuteVideo()">Unmute Stream</button>
+
+  <script>
+    function unmuteVideo() {
+      var iframe = document.getElementById("liveStream");
+      iframe.src = "https://www.youtube.com/embed/wciz18maOjc?autoplay=1&mute=0&loop=1&playlist=wciz18maOjc&vq=hd1440";
+    }
+  </script>
 </body>
 </html>
